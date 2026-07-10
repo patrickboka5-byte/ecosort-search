@@ -1,0 +1,19 @@
+# Environnements Python
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Dataset Kaggle (trop lourd pour GitHub)
+dataset/
+data/
+*.zip
+
+# IDE et systeme
+.vscode/
+.idea/
+.DS_Store
+
+# Divers
+*.log
