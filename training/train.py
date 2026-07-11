@@ -56,7 +56,7 @@ base_model.trainable = False  # on GELE son savoir
 
 inputs = keras.Input(shape=IMG_SIZE + (3,))
 x = data_augmentation(inputs)
-x = keras.applications.mobilenet_v2.preprocess_input(x)
+x = layers.Rescaling(1./127.5, offset=-1)(x)
 x = base_model(x, training=False)
 x = layers.GlobalAveragePooling2D()(x)
 x = layers.Dropout(0.2)(x)
@@ -75,6 +75,7 @@ history = model.fit(train_ds, validation_data=val_ds, epochs=EPOCHS)
 
 # ---------- 6. Sauvegarde ----------
 model.save("models/modele_eco_sort.h5")
+model.save("models/modele_eco_sort.keras")
 print("Modele sauvegarde dans models/modele_eco_sort.h5")
 
 # ---------- 7. Courbes d'apprentissage ----------
