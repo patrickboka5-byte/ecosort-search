@@ -1,8 +1,6 @@
+streamlit
+tensorflow-cpu
+pillow
+numpy
 requests
 beautifulsoup4
-tensorflow
-numpy
-matplotlib
-scikit-learn
-streamlit
-Pillow
